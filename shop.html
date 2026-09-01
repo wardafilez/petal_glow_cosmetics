@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Collection | Petal Glow Cosmetics</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #121212;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #a30000;
+        }
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d62027;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li { margin-left: 30px; }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: #d62027; }
+
+        .shop-header {
+            text-align: center;
+            padding: 50px 20px 20px 20px;
+        }
+        .shop-header h1 {
+            color: #d62027;
+            font-size: 38px;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+        .shop-header p {
+            color: #aaa;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* --- PRODUCT GRID --- */
+        .product-grid {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background-color: #121212;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .product-card:hover {
+            border-color: #d62027;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(214, 32, 39, 0.2);
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            background-color: #050505;
+        }
+        .product-card h3 {
+            font-size: 20px;
+            margin: 15px 0 8px 0;
+            color: #fff;
+        }
+        .product-price {
+            color: #d62027;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .buy-btn {
+            background-color: #a30000;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+        .buy-btn:hover {
+            background-color: #d62027;
+            box-shadow: 0 0 10px rgba(214, 32, 39, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #121212;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 15px; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+            .product-grid { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PETAL GLOW</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="shop-header">
+        <h1>Our Luxury Collection</h1>
+        <p>Premium quality products designed to bring out your inner glow.</p>
+    </div>
+
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="https://unsplash.com" alt="Lipstick">
+            <h3>Velvet Matte Lipstick</h3>
+            <div class="product-price">$18.00</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://unsplash.com" alt="Eyeshadow">
+            <h3>Crimson Palette</h3>
+            <div class="product-price">$35.00</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="https://unsplash.com" alt="Blush">
+            <h3>Glow Liquid Blush</h3>
+            <div class="product-price">$22.00</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
 
