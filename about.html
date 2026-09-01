@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Petal Glow Cosmetics</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #121212;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #a30000;
+        }
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d62027;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li { margin-left: 30px; }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: #d62027; }
 
+        /* --- ABOUT CONTENT --- */
+        .about-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text { flex: 1; }
+        .about-text h1 {
+            color: #d62027;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            color: #ccc;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(214, 32, 39, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #121212;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 15px; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+            .about-container { flex-direction: column; text-align: center; margin: 30px auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PETAL GLOW</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-container">
+        <div class="about-text">
+            <h1>Our Story</h1>
+            <p>Welcome to <strong>Petal Glow Cosmetics</strong>, where beauty meets boldness. Founded with a passion for high-quality, luxury cosmetics, we believe that makeup is not just about enhancing your look—it's about expressing your inner strength and confidence.</p>
+            <p>Our products are carefully crafted with premium ingredients to ensure rich pigmentation, velvet-smooth textures, and long-lasting wear. From striking crimson lipsticks to dramatic eyeshadow palettes, Petal Glow is designed for anyone who loves to make a statement.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://unsplash.com" alt="Makeup Aesthetic">
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
