@@ -48,14 +48,14 @@
             color: #d62027; /* Hover karne par text red hoga */
         }
 
-        /* --- HERO BANNER SECTION (MANAGING FULL FACE & LIPS) --- */
+                /* --- HERO BANNER SECTION (FIXED POSITION) --- */
         .hero {
             text-align: center;
-            padding: 220px 20px; /* Padding badha di taake lips aur face poora fit ho ske */
+            padding: 160px 20px; /* Padding ko dubara thoda kam kiya taake balanced lage */
             background-color: #000000;
-            /* ⬇️ 'center center/contain' se picture bina kate bilkul poori aur saaf frame ke andar dikhegi */
+            /* ⬇️ 'cover' lagaya taake sides khali na rahein, aur 'center 35%' se face + lips dono fit rahenge */
             background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), 
-                        url('model.png') no-repeat center center/contain;
+                        url('model.png') no-repeat center 35%/cover;
         }
         .hero h1 {
             font-size: 52px;
