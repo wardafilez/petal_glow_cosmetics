@@ -44,62 +44,40 @@
         nav ul li a:hover {
             color: #d62027;
         }
-        
-        /* --- NEW HERO LAYOUT (Side-by-Side) --- */
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            /* ⬇️ Yahan humne aapki saved picture 'model.png' ka direct link lga diya hai */
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)), 
+                        url('model.png') no-repeat center center/cover;
         }
-        .hero-text {
-            flex: 1;
-        }
-        .hero-text h1 {
+        .hero h1 {
             font-size: 50px;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
         }
-        .hero-text h1 span {
+        .hero h1 span {
             color: #d62027;
         }
-        .hero-text p {
+        .hero p {
             font-size: 18px;
             color: #cccccc;
             margin-bottom: 30px;
-            line-height: 1.6;
         }
-        .hero-text .btn {
+        .hero .btn {
             background-color: #a30000;
             color: white;
-            padding: 14px 35px;
+            padding: 12px 30px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
             transition: 0.3s;
             display: inline-block;
         }
-        .hero-text .btn:hover {
+        .hero .btn:hover {
             background-color: #d62027;
             box-shadow: 0 0 15px #d62027;
         }
-        .hero-image-box {
-            flex: 1;
-            text-align: center;
-        }
-        /* ⬇️ Isse aapki image bina kate bilkul poori aur saaf dikhegi */
-        .hero-image-box img {
-            max-width: 100%;
-            height: auto;
-            max-height: 450px;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(214, 32, 39, 0.2);
-            border: 1px solid #1a1a1a;
-        }
-        
         footer {
             text-align: center;
             padding: 20px;
@@ -107,23 +85,22 @@
             color: #666;
             font-size: 14px;
             border-top: 1px solid #222;
-            margin-top: 40px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
-
-        /* 📱 MOBILE RESPONSIVE (Phone par image text ke niche aa jayegi automatic) */
         @media (max-width: 768px) {
             nav { flex-direction: column; padding: 15px; }
             nav ul { margin-top: 15px; }
             nav ul li { margin: 0 10px; }
-            .hero-container { flex-direction: column-reverse; text-align: center; padding: 30px 20px; }
-            .hero-text h1 { font-size: 36px; }
-            .hero-image-box img { max-height: 350px; }
+            .hero { padding: 100px 15px; }
+            .hero h1 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV BAR -->
     <nav>
         <div class="logo">PETAL GLOW</div>
         <ul>
@@ -134,20 +111,12 @@
         </ul>
     </nav>
 
-    <!-- NEW HERO SECTION -->
-    <div class="hero-container">
-        <div class="hero-text">
-            <h1>Welcome to <br><span>Petal Glow</span></h1>
-            <p>Bold Colors. Premium Quality. Unleash Your Inner Diva.</p>
-            <a href="shop.html" class="btn">Explore Shop</a>
-        </div>
-        <div class="hero-image-box">
-            <!-- ⬇️ Aapki model ki picture bina kate poori yahan dikhegi -->
-            <img src="model.png" alt="Petal Glow Model">
-        </div>
+    <div class="hero">
+        <h1>Welcome to <span>Petal Glow</span></h1>
+        <p>Bold Colors. Premium Quality. Unleash Your Inner Diva.</p>
+        <a href="shop.html" class="btn">Explore Shop</a>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
     </footer>
