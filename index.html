@@ -3,121 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petal Glow Cosmetics | Radiant Beauty</title>
+    <title>Petal Glow Cosmetics | Luxury Makeup</title>
     <style>
-        * {
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        body {
-            /* Yeh background 'The Eden Rose' se bilkul alag hai - Soft Ivory Pink White */
-            background-color: #fffafb; 
-            color: #2c2c2c;
-        }
-
-        header {
+        nav {
+            background-color: #121212;
+            padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            border-bottom: 2px solid #a30000;
         }
-
-        .brand-name {
+        nav .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #c48b9f; /* Dark Dusty Rose - Pure makeup look */
+            color: #d62027;
             letter-spacing: 2px;
         }
-
-        nav a {
-            text-decoration: none;
-            color: #e60026; !important; /* Buttons ka text color */
-            background-color: #ffe6e9; /* Ekdam soft blush pink background buttons ke liye */
-            padding: 8px 22px;
-            margin-left: 15px;
-            font-weight: 600;
-            font-size: 14px;
-            border-radius: 25px; /* Perfect round candy button shape */
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background-color: #e60026; /* Hover karne par dark pink button ho jaye */
-            color: white !important; /* Aur text sufaid ho jaye */
-            transform: scale(1.05);
-        }
-
-        /* --- COSMETICS HERO SECTION --- */
-        .hero {
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #d62027;
+        }
+        .hero {
             text-align: center;
-            padding: 130px 20px;
-            /* Shandaar soft makeup palette gradient look */
-            background: linear-gradient(to bottom, #ffe5ec, #fffafb); 
+            padding: 160px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
         }
-
         .hero h1 {
-            font-size: 46px;
-            color: #b06a80; /* Bold Deep Pinkish Rose Heading */
-            margin-bottom: 15px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-size: 50px;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
         }
-
+        .hero h1 span {
+            color: #d62027;
+        }
         .hero p {
-            font-size: 17px;
-            color: #605557; /* Soft earthy gray color text ke liye */
-            max-width: 620px;
-            line-height: 1.7;
-            margin-bottom: 35px;
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 30px;
         }
-
-        .shop-btn {
-            background-color: #c48b9f;
+        .hero .btn {
+            background-color: #a30000;
             color: white;
-            padding: 14px 38px;
+            padding: 12px 30px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
-            border-radius: 30px;
-            letter-spacing: 1px;
-            transition: background 0.3s, transform 0.2s;
+            border-radius: 4px;
+            transition: 0.3s;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(196, 139, 159, 0.25);
         }
-
-        .shop-btn:hover {
-            background-color: #a67083;
-            transform: translateY(-2px);
+        .hero .btn:hover {
+            background-color: #d62027;
+            box-shadow: 0 0 15px #d62027;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #121212;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #222;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 15px; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+            .hero { padding: 100px 15px; }
+            .hero h1 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="brand-name">PETAL GLOW</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="about.html">Our Story</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">PETAL GLOW</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section class="hero">
-        <h1>Reveal Your Natural Glow</h1>
-        <p>Experience clean, vegan, and cruelty-free cosmetics crafted carefully to enhance your unique radiance with the luxury softness of petals.</p>
-        <a href="shop.html" class="shop-btn">SHOP COLLECTION</a>
-    </section>
+    <div class="hero">
+        <h1>Welcome to <span>Petal Glow</span></h1>
+        <p>Bold Colors. Premium Quality. Unleash Your Inner Diva.</p>
+        <a href="shop.html" class="btn">Explore Shop</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
