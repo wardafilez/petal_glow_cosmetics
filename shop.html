@@ -332,7 +332,42 @@
     <footer>
         &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
     </footer>
+      <script>
+        const searchInput = document.getElementById('search-input');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
 
+        function filterProducts() {
+            const searchText = searchInput.value.toLowerCase();
+            const activeCategory = document.querySelector('.filter-btn.active').getAttribute('data-category');
+
+            productCards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const category = card.getAttribute('data-cat');
+
+                const matchesSearch = title.includes(searchText);
+                const matchesCategory = (activeCategory === 'all' || category === activeCategory);
+
+                if (matchesSearch && matchesCategory) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // Search bar typing event
+        searchInput.addEventListener('keyup', filterProducts);
+
+        // Filter buttons click event
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterProducts();
+            });
+        });
+    </script>
 </body>
 </html>
 
