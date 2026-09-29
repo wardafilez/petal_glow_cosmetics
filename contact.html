@@ -11,6 +11,7 @@
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         nav {
             background-color: #121212;
@@ -32,74 +33,144 @@
             padding: 0;
             display: flex;
         }
-        nav ul li {
-            margin-left: 30px;
-        }
+        nav ul li { margin-left: 30px; }
         nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-size: 16px;
             transition: 0.3s;
         }
-        nav ul li a:hover {
-            color: #d62027;
-        }
-        .contact-container {
-            max-width: 600px;
+        nav ul li a:hover { color: #d62027; }
+
+        /* --- CONTACT SPLIT CONTENT LAYOUT --- */
+        .contact-wrapper {
+            max-width: 1100px;
             margin: 60px auto;
-            background-color: #121212;
+            padding: 0 20px;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 40px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        /* Left Side Info Block */
+        .contact-info-panel {
+            flex: 1;
+            background-color: #090909;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
             padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #a30000;
-            box-sizing: border-box;
-            box-shadow: 0px 0px 20px rgba(163, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-        .contact-container h2 {
+        .contact-info-panel h2 {
             color: #d62027;
-            text-align: center;
-            margin-bottom: 10px;
+            font-size: 32px;
+            margin: 0 0 15px 0;
+            letter-spacing: 1px;
         }
-        .contact-container p {
-            text-align: center;
+        .contact-info-panel p {
             color: #aaa;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+        }
+        .info-details {
+            margin-bottom: 25px;
+        }
+        .info-details h4 {
+            color: #ffffff;
+            margin: 0 0 5px 0;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        .info-details p {
+            color: #888;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Right Side Form Block */
+        .contact-form-panel {
+            flex: 1.2;
+            background-color: #090909;
+            border: 1px solid #a30000;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(214, 32, 39, 0.1);
+        }
+        .contact-form-panel h3 {
+            color: #d62027;
+            font-size: 26px;
+            text-align: center;
+            margin: 0 0 8px 0;
+        }
+        .contact-form-panel .sub-text {
+            color: #777;
+            font-size: 14px;
+            text-align: center;
             margin-bottom: 30px;
         }
+        
+        /* Form Inputs & Glowing Fields */
         .form-group {
             margin-bottom: 20px;
         }
         .form-group label {
             display: block;
+            color: #ccc;
+            font-size: 14px;
             margin-bottom: 8px;
-            color: #dddddd;
+            letter-spacing: 0.5px;
         }
-        .form-group input, .form-group textarea {
+        .form-control {
             width: 100%;
-            padding: 12px;
-            background-color: #000000;
-            border: 1px solid #444;
+            background-color: #121212;
+            border: 1px solid #222;
+            border-radius: 6px;
+            padding: 12px 15px;
             color: #ffffff;
-            border-radius: 4px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
             box-sizing: border-box;
         }
-        .form-group input:focus, .form-group textarea:focus {
+        .form-control:focus {
             border-color: #d62027;
-            outline: none;
+            box-shadow: 0 0 10px rgba(214, 32, 39, 0.3);
         }
-        .submit-btn {
-            width: 100%;
+        textarea.form-control {
+            height: 120px;
+            resize: none;
+        }
+        
+        .send-btn {
             background-color: #a30000;
             color: white;
-            border: none;
+            border: 1px solid #d62027;
             padding: 14px;
+            width: 100%;
             font-size: 16px;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             transition: 0.3s;
+            letter-spacing: 1px;
+            margin-top: 10px;
         }
-        .submit-btn:hover {
+        .send-btn:hover {
             background-color: #d62027;
+            box-shadow: 0 0 15px rgba(214, 32, 39, 0.4);
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -107,13 +178,16 @@
             color: #666;
             font-size: 14px;
             border-top: 1px solid #222;
-            margin-top: 50px;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 850px) {
+            .contact-wrapper { flex-direction: column; margin: 40px auto; gap: 30px; }
         }
         @media (max-width: 768px) {
             nav { flex-direction: column; padding: 15px; }
             nav ul { margin-top: 15px; }
             nav ul li { margin: 0 10px; }
-            .contact-container { margin: 30px 15px; padding: 25px; }
         }
     </style>
 </head>
@@ -129,24 +203,54 @@
         </ul>
     </nav>
 
-    <div class="contact-container">
-        <h2>Get In Touch</h2>
-        <p>Have questions? We'd love to hear from you.</p>
-        <form>
-            <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" placeholder="Enter your name" required>
+    <div class="contact-wrapper">
+        
+        <!-- LEFT SIDE - BRAND INFO PANEL -->
+        <div class="contact-info-panel">
+            <h2>Get In Touch</h2>
+            <p>Have questions about our premium collections, shades, or orders? We are here to guide your glow.</p>
+            
+            <div class="info-details">
+                <h4>📧 Email Address</h4>
+                <p>support@petalglowcosmetics.com</p>
             </div>
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="Enter your email" required>
+            
+            <div class="info-details">
+                <h4>⏰ Business Hours</h4>
+                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
             </div>
-            <div class="form-group">
-                <label>Message</label>
-                <textarea rows="5" placeholder="How can we help you?" required></textarea>
+            
+            <div class="info-details">
+                <h4>✨ Connect With Us</h4>
+                <p>@PetalGlowCosmetics</p>
             </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        </div>
+
+        <!-- RIGHT SIDE - UPGRADED MESSAGE FORM -->
+        <div class="contact-form-panel">
+            <h3>Send Us A Message</h3>
+            <div class="sub-text">We'd love to hear from you.</div>
+            
+            <form>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" placeholder="Enter your active email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea class="form-control" placeholder="How can we help you today?" required></textarea>
+                </div>
+                
+                <button type="submit" class="send-btn">Send Message</button>
+            </form>
+        </div>
+
     </div>
 
     <footer>
