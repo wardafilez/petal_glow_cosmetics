@@ -3,30 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petal Glow Cosmetics | Luxury Makeup</title>
+    <title>Petal Glow Cosmetics | Bold Colors. Premium Quality.</title>
     <style>
-        /* --- GLOBAL STYLES --- */
         body {
-            background-color: #000000; /* Pure Black Theme */
+            background-color: #000000;
             color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
         }
-
-        /* --- NAVIGATION BAR --- */
         nav {
-            background-color: #121212; /* Dark Charcoal */
+            background-color: #121212;
             padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #a30000; /* Thin Red Border */
+            border-bottom: 2px solid #a30000;
         }
         nav .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #d62027; /* Velvet Red Logo */
+            color: #d62027;
             letter-spacing: 2px;
         }
         nav ul {
@@ -35,60 +32,122 @@
             padding: 0;
             display: flex;
         }
-        nav ul li {
-            margin-left: 30px;
-        }
+        nav ul li { margin-left: 30px; }
         nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-size: 16px;
             transition: 0.3s;
         }
-        nav ul li a:hover {
-            color: #d62027; /* Hover karne par text red hoga */
-        }
+        nav ul li a:hover { color: #d62027; }
 
-                /* --- HERO BANNER SECTION (FIXED POSITION) --- */
-        .hero {
+        /* --- HERO BANNER SECTION --- */
+        .hero-section {
+            background: linear-gradient(135deg, #121212 0%, #000000 100%);
+            padding: 100px 20px;
             text-align: center;
-            padding: 160px 20px; /* Padding ko dubara thoda kam kiya taake balanced lage */
-            background-color: #000000;
-            /* ⬇️ 'cover' lagaya taake sides khali na rahein, aur 'center 35%' se face + lips dono fit rahenge */
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), 
-                        url('model.png') no-repeat center 35%/cover;
+            border-bottom: 1px solid #222;
+            position: relative;
+            overflow: hidden;
         }
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 15px;
-            letter-spacing: 3px;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(214, 32, 39, 0.05) 0%, transparent 60%);
+            pointer-events: none;
         }
-        .hero h1 span {
-            color: #d62027; /* Petal Glow ka Glow Red hoga */
+        .hero-content h1 {
+            font-size: 48px;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            letter-spacing: 2px;
         }
-        .hero p {
-            font-size: 20px;
-            color: #cccccc;
-            margin-bottom: 35px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+        .hero-content h1 span {
+            color: #d62027;
         }
-        .hero .btn {
+        .hero-content p {
+            font-size: 18px;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+        .cta-btn {
             background-color: #a30000;
             color: white;
-            padding: 14px 35px;
             text-decoration: none;
+            padding: 14px 35px;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 4px;
-            transition: 0.3s;
+            border-radius: 30px;
             display: inline-block;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+            letter-spacing: 1px;
+            border: 1px solid #d62027;
         }
-        .hero .btn:hover {
+        .cta-btn:hover {
             background-color: #d62027;
-            box-shadow: 0 0 15px #d62027;
+            box-shadow: 0 0 20px rgba(214, 32, 39, 0.6);
+            transform: translateY(-2px);
         }
 
-        /* --- FOOTER --- */
+        /* --- CATEGORIES SECTION --- */
+        .categories-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .categories-container h2 {
+            font-size: 32px;
+            color: #d62027;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        .category-card {
+            background-color: #121212;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .category-card:hover {
+            border-color: #d62027;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(214, 32, 39, 0.25);
+            background: linear-gradient(180deg, #121212 0%, #1a0506 100%);
+        }
+        .category-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .category-card h3 {
+            font-size: 22px;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+        .category-card p {
+            font-size: 14px;
+            color: #888;
+            margin: 0;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -96,41 +155,20 @@
             color: #666;
             font-size: 14px;
             border-top: 1px solid #222;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-sizing: border-box;
+            margin-top: 80px;
         }
 
-        /* 📱 --- MOBILE RESPONSIVE STYLES --- */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                padding: 15px;
-                text-align: center;
-            }
-            nav ul {
-                margin-top: 15px;
-            }
-            nav ul li {
-                margin: 0 10px;
-            }
-            .hero {
-                padding: 120px 15px;
-                background-size: contain; /* Phone par bhi image poori hi rahegi */
-            }
-            .hero h1 {
-                font-size: 34px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
+            nav { flex-direction: column; padding: 15px; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+            .hero-content h1 { font-size: 36px; }
+            .categories-grid { gap: 15px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV BAR (MENU) -->
     <nav>
         <div class="logo">PETAL GLOW</div>
         <ul>
@@ -141,14 +179,51 @@
         </ul>
     </nav>
 
-    <!-- HERO SECTION -->
-    <div class="hero">
-        <h1>Welcome to <span>Petal Glow</span></h1>
-        <p>Bold Colors. Premium Quality. Unleash Your Inner Diva.</p>
-        <a href="shop.html" class="btn">Explore Shop</a>
+    <!-- HERO BANNER SECTION -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to <span>Petal Glow</span></h1>
+            <p>Bold Colors. Premium Quality. Unleash Your Inner Diva with our elite luxury cosmetics collection tailored for professional glam.</p>
+            <a href="shop.html" class="cta-btn">Explore Collection</a>
+        </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- MAIN CATEGORIES SECTION -->
+    <div class="categories-container">
+        <h2>Shop By Category</h2>
+        <div class="categories-grid">
+            
+            <!-- Category 1 - Face -->
+            <a href="shop.html" class="category-card">
+                <div class="category-icon">✨</div>
+                <h3>Face</h3>
+                <p>Blush, BB Balms & Glow Formulas</p>
+            </a>
+
+            <!-- Category 2 - Eyes -->
+            <a href="shop.html" class="category-card">
+                <div class="category-icon">👁️</div>
+                <h3>Eyes</h3>
+                <p>Palettes, Mascaras & Glitters</p>
+            </a>
+
+            <!-- Category 3 - Lips -->
+            <a href="shop.html" class="category-card">
+                <div class="category-icon">💄</div>
+                <h3>Lips</h3>
+                <p>Matte Lipsticks & Hydrating Oils</p>
+            </a>
+
+            <!-- Category 4 - Tools -->
+            <a href="shop.html" class="category-card">
+                <div class="category-icon">🖌️</div>
+                <h3>Tools</h3>
+                <p>Premium Brushes & Blenders</p>
+            </a>
+
+        </div>
+    </div>
+
     <footer>
         &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
     </footer>
