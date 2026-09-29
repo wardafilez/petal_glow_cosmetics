@@ -45,12 +45,12 @@
         .hero-section {
             /* Model image ko background mein set kiya aur sath dark overlay lagaya */
             background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85)), url('model.png');
-            background-size: cover;
-            background-position: center top;
+            background-size: 100% auto; /* 👈 Is se image width ke hisab se scale hogi */
+            background-position: center 25%; /* 👈 Image ko perfect vertically center kiya */
             background-repeat: no-repeat;
             width: 100%;
-            min-height: 100px;
-            padding: 200px 0px;
+            min-height: 320px; /* 👈 Height ko mazeed chota kiya */
+            padding: 70px 0px; /* 👈 Upar niche ka gap mazeed kam kiya */
             text-align: center;
             border-bottom: 1px solid #222;
             box-sizing: border-box;
