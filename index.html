@@ -147,8 +147,61 @@
         <p>Bold Colors. Premium Quality. Unleash Your Inner Diva.</p>
         <a href="shop.html" class="btn">Explore Shop</a>
     </div>
+        <!-- LUXURY LIVE SCROLLING TEXT TRACK -->
+    <style>
+        .marquee-container {
+            width: 100%;
+            background-color: #0c0c0c;
+            border-top: 1px solid #a30000;
+            border-bottom: 1px solid #a30000;
+            padding: 15px 0;
+            overflow: hidden;
+            position: relative;
+            margin-top: 40px;
+            box-shadow: 0 0 15px rgba(214, 32, 39, 0.1);
+        }
+        .marquee-content {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite;
+        }
+        .marquee-text {
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+        }
+        .marquee-text span {
+            color: #d62027;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-shadow: 0 0 8px rgba(214, 32, 39, 0.6);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
 
-    <!-- FOOTER -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <!-- Yeh text loop banakar smoothly screen par chalta rahega -->
+            <div class="marquee-text">CRUELTY FREE <span>✦</span></div>
+            <div class="marquee-text">PREMIUM QUALITY <span>✦</span></div>
+            <div class="marquee-text">UNLEASH YOUR INNER DIVA <span>✦</span></div>
+            <div class="marquee-text">PETAL GLOW LUXURY <span>✦</span></div>
+            <!-- Loop repetition taake smooth animation break na ho -->
+            <div class="marquee-text">CRUELTY FREE <span>✦</span></div>
+            <div class="marquee-text">PREMIUM QUALITY <span>✦</span></div>
+            <div class="marquee-text">UNLEASH YOUR INNER DIVA <span>✦</span></div>
+            <div class="marquee-text">PETAL GLOW LUXURY <span>✦</span></div>
+        </div>
+    </div>
+<!-- FOOTER -->
     <footer>
         &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
     </footer>
