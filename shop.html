@@ -57,6 +57,52 @@
             margin: 0;
         }
 
+        /* --- SEARCH & FILTER SECTION --- */
+        .controls-container {
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 16px;
+            background-color: #121212;
+            border: 1px solid #222;
+            border-radius: 30px;
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .search-bar:focus {
+            border-color: #d62027;
+            box-shadow: 0 0 10px rgba(214, 32, 39, 0.3);
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .filter-btn {
+            background-color: #121212;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 8px 20px;
+            font-size: 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #a30000;
+            border-color: #d62027;
+            box-shadow: 0 0 8px rgba(214, 32, 39, 0.4);
+        }
+
         /* --- PRODUCT GRID --- */
         .product-grid {
             max-width: 1200px;
@@ -73,6 +119,7 @@
             padding: 20px;
             text-align: center;
             transition: 0.3s;
+            display: block; /* Default visible */
         }
         .product-card:hover {
             border-color: #d62027;
@@ -82,14 +129,21 @@
         .product-card img {
             width: 100%;
             height: 250px;
-            object-fit: cover;
             border-radius: 6px;
-            background-color: #050505;
         }
         .product-card h3 {
             font-size: 20px;
             margin: 15px 0 8px 0;
             color: #fff;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.4;
+            height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 15px;
         }
         .product-price {
             color: #d62027;
@@ -150,118 +204,134 @@
         <p>Premium quality products designed to bring out your inner glow.</p>
     </div>
 
-    <div class="product-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-            <img src="lipstick.png.jpeg" alt="Lipstick">
+    <!-- SEARCH & FILTERS -->
+    <div class="controls-container">
+        <input type="text" id="search-input" class="search-bar" placeholder="Search premium cosmetics...">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="face">Face</button>
+            <button class="filter-btn" data-category="eyes">Eyes</button>
+            <button class="filter-btn" data-category="lips">Lips</button>
+            <button class="filter-btn" data-category="tools">Tools</button>
+        </div>
+    </div>
+
+    <div class="product-grid" id="grid-box">
+        
+        <!-- Product 1 (Lips) -->
+        <div class="product-card" data-cat="lips">
+            <img src="lipstick.png.jpeg" alt="Lipstick" style="object-fit: cover; background-color: #050505;">
             <h3>Velvet Matte Lipstick</h3>
-            <p class="product-description">Indulge in a rich, highly pigmented velvet finish that glides on smoothly and stays all day. This weightless formula keeps your lips beautifully bold, moisturized, and completely smudge-proof.</p>
+            <p class="product-description">Indulge in a rich, highly pigmented velvet finish that glides on smoothly and stays all day.</p>
             <div class="product-price">$18.00</div>
             <button class="buy-btn">Buy Now</button>
         </div>
 
-        <!-- Product 2 -->
-        <div class="product-card">
-            <img src="eyeshadow.png.jpeg" alt="Eyeshadow">
+        <!-- Product 2 (Eyes) -->
+        <div class="product-card" data-cat="eyes">
+            <img src="eyeshadow.png.jpeg" alt="Eyeshadow" style="object-fit: cover; background-color: #050505;">
             <h3>Crimson Palette</h3>
-            <p class="product-description">Unleash your creativity with 9 stunning, richly pigmented shades ranging from warm coppers to deep burgundy tics. Perfect for creating both effortless daytime glam and bold, dramatic night looks..</p>
+            <p class="product-description">Unleash your creativity with 9 stunning, richly pigmented shades ranging from warm coppers to deep burgundy.</p>
             <div class="product-price">$35.00</div>
             <button class="buy-btn">Buy Now</button>
         </div>
 
-        <!-- Product 3 -->
-        <div class="product-card">
-            <img src="blush.png.jpeg" alt="Blush">
+        <!-- Product 3 (Face) -->
+        <div class="product-card" data-cat="face">
+            <img src="blush.png.jpeg" alt="Blush" style="object-fit: cover; background-color: #050505;">
             <h3>Glow Liquid Blush</h3>
-            <p class="product-description">Achieve a fresh, dewy, and natural-looking flush with our lightweight liquid formula. It blends seamlessly into the skin, giving your cheeks a radiant, long-lasting inner glow.</p>
+            <p class="product-description">Achieve a fresh, dewy, and natural-looking flush with our lightweight liquid formula.</p>
             <div class="product-price">$22.00</div>
             <button class="buy-btn">Buy Now</button>
         </div>
-        <!-- Product 4 -->
-        <div class="product-card">
-    <img src="mascara.png" alt="Volumizing Mascara" style="height: 250px; object-fit: contain; width: 100%; background: #000000;">
-    <h3>Volumizing Mascara</h3>
-    <p class="product-description">Get instantly longer, thicker, and more voluminous lashes! This smudge-proof mascara opens up your eyes for a bold and dramatic look.</p>
-    <div class="product-price">$15.00</div>
-    <button class="buy-btn">Buy Now</button>
-</div>
-        <!-- Product 5 -->
-     <div class="product-card">
-    <img src="brushes.png" alt="Makeup Brush Set" style="height: 250px; object-fit: contain; width: 100%; background: #000000;">
-    <h3>Makeup Brush Set</h3>
-    <p class="product-description">Your ultimate toolkit for professional makeup at home. Features super-soft, premium bristles that are gentle on the skin and blend products effortlessly.</p>
-    <div class="product-price">$25.00</div>
-    <button class="buy-btn">Buy Now</button>
-</div>
-        <!-- Product 6 -->
-        <div class="product-card">
-    <img src="lipoil.png" alt="Hydrating Lip Oil" style="height: 250px; object-fit: contain; width: 100%; background: #000000;">
-    <h3>Hydrating Lip Oil</h3>
-    <p class="product-description">Keep your lips deeply hydrated, soft, and glossy! This lightweight lip oil nourishes your lips throughout the day without any sticky feeling.</p>
-    <div class="product-price">$12.00</div>
-    <button class="buy-btn">Buy Now</button>
-</div>
-        <!-- Product 7-->
-        <div class="product-card">
-    <img src="blender.png" alt="Makeup Blender">
-    <h3>Makeup Blender</h3>
-    <p class="product-description">Get a flawless, airbrushed look every time. This ultra-soft beauty blender seamlessly blends your foundation and concealer for a completely smooth, natural finish.</p>
-    <div class="product-price">$8.00</div>
-    <button class="buy-btn">Buy Now</button>
-</div>
-        <!-- Product 8-->
-        <div class="product-card">
-    <img src="beautiful.png" alt="Beautiful Glitter Palette" style="height: 250px; object-fit: contain; width: 100%; background: #000000;">
-    <h3>Beautiful Glitter Palette</h3>
-    <p class="product-description">Add a gorgeous sparkle to your eyes! This high-shine glitter palette is perfect for weddings, parties, and festive looks to make you stand out in any crowd.</p>
-    <div class="product-price">$20.00</div>
-    <button class="buy-btn">Buy Now</button>
-</div>
-        <!-- Product 9-->
-        <div class="product-card">
-        <img src="pallate.png" alt="Vintage Fairytale Pallate" style="height: 250px; object-fit: contain; width: 100%; background: #000000;">
-        <h3>Vintage Fairytale Palette</h3>
-        <p class="product-description">Step into a vintage fairytale with this beautifully designed eyeshadow palette. Featuring a mix of soft mattes and high-shine shimmers with gorgeous heart and shell embossments, it delivers smooth blendability and rich pigment for a dreamy, elegant look.</p>
-         <div class="product-price">$20.99</div>
-    <button class="buy-btn">Buy Now</button>
-</div>
-        <!-- Product 10-->       
-<div class="product-card">
-    <img src="nailpint.png" alt="Petal Glow Blemish Balm">
-    <h3>Petal Glow Blemish Balm</h3>
-    <p class="product-description">A lightweight, breathable BB balm that perfects your complexion while deeply nourishing the skin. Infused with skin-loving ingredients, it provides effortless, buildable coverage with a fresh, natural, and radiant dewy finish.</p>   
-    <div class="product-price">$20.99</div>
-    <button class="buy-btn">Buy Now</button>
-</div>
-                      <!-- Product 11 -->       
-        <div class="product-card">
-            <img src="makeup.png.jpeg" alt="Ultimate Glam Makeup Kit" style="height: 250px; object-fit: contain; width: 100%; background: #000000;">
+
+        <!-- Product 4 (Eyes) -->
+        <div class="product-card" data-cat="eyes">
+            <img src="mascara.png" alt="Volumizing Mascara" style="object-fit: contain; background: #000000;">
+            <h3>Volumizing Mascara</h3>
+            <p class="product-description">Get instantly longer, thicker, and more voluminous lashes! This smudge-proof mascara opens up your eyes.</p>
+            <div class="product-price">$15.00</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <!-- Product 5 (Tools) -->
+        <div class="product-card" data-cat="tools">
+            <img src="brushes.png" alt="Makeup Brush Set" style="object-fit: contain; background: #000000;">
+            <h3>Makeup Brush Set</h3>
+            <p class="product-description">Your ultimate toolkit for professional makeup at home. Features super-soft, premium bristles.</p>
+            <div class="product-price">$25.00</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <!-- Product 6 (Lips) -->
+        <div class="product-card" data-cat="lips">
+            <img src="lipoil.png" alt="Hydrating Lip Oil" style="object-fit: contain; background: #000000;">
+            <h3>Hydrating Lip Oil</h3>
+            <p class="product-description">Keep your lips deeply hydrated, soft, and glossy! This lightweight lip oil nourishes your lips.</p>
+            <div class="product-price">$12.00</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <!-- Product 7 (Tools) -->
+        <div class="product-card" data-cat="tools">
+            <img src="blender.png" alt="Makeup Blender" style="object-fit: cover; background-color: #050505;">
+            <h3>Makeup Blender</h3>
+            <p class="product-description">Get a flawless, airbrushed look every time. This ultra-soft beauty blender seamlessly blends foundation.</p>
+            <div class="product-price">$8.00</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+                <!-- Product 8 (Eyes) -->
+        <div class="product-card" data-cat="eyes">
+            <img src="beautiful.png" alt="Beautiful Glitter Palette" style="object-fit: contain; background: #000000;">
+            <h3>Beautiful Glitter Palette</h3>
+            <p class="product-description">Add a gorgeous sparkle to your eyes! This high-shine glitter palette is perfect for weddings and parties.</p>
+            <div class="product-price">$20.00</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <!-- Product 9 (Face) -->
+        <div class="product-card" data-cat="face">
+            <img src="nailpint.png" alt="Petal Glow Blemish Balm" style="object-fit: cover; background-color: #050505;">
+            <h3>Petal Glow Blemish Balm</h3>
+            <p class="product-description">A lightweight, breathable BB balm that perfects your complexion while deeply nourishing the skin.</p>   
+            <div class="product-price">$20.99</div>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <!-- Product 10 (Tools) -->
+        <div class="product-card" data-cat="tools">
+            <img src="makeup.png.jpeg" alt="Ultimate Glam Makeup Kit" style="object-fit: contain; background: #000000;">
             <h3>Ultimate Glam Makeup Kit</h3>
-            <p class="product-description">The ultimate all-in-one beauty collection for a flawless professional look. This luxury kit features premium makeup brushes, rich eyeshadow palettes, and essential glow-enhancing formulas beautifully packed for your vanity.</p>   
+            <p class="product-description">The ultimate all-in-one beauty collection for a flawless professional look. This luxury kit features premium brushes.</p>   
             <div class="product-price">$85.00</div>
             <button class="buy-btn">Buy Now</button>
         </div>
-                <!-- Product 12 -->       
-        <div class="product-card">
-            <img src="shineynailpaint.png" alt="Shimmer Glow Nail Lacquer">
+
+        <!-- Product 11 (Lips) -->
+        <div class="product-card" data-cat="lips">
+            <img src="shineynailpaint.png" alt="Shimmer Glow Nail Lacquer" style="object-fit: cover; background-color: #050505;">
             <h3>Shimmer Glow Nail Lacquer</h3>
-            <p class="product-description">Add a touch of pure luxury to your fingertips with our exclusive PG shimmer formula. Infused with high-shine micro-glitter, this long-lasting, chip-resistant nail lacquer delivers a breathtaking, diamond-like sparkle with every single coat.</p>   
+            <p class="product-description">Add a touch of pure luxury to your fingertips with our exclusive PG shimmer formula. High-shine glitter.</p>   
             <div class="product-price">$14.50</div>
             <button class="buy-btn">Buy Now</button>
         </div>
-                <!-- Product 13 -->       
-        <div class="product-card">
-            <img src="liquidblush.png" alt="Petal Glow Liquid Blush">
+
+        <!-- Product 12 (Face) -->
+        <div class="product-card" data-cat="face">
+            <img src="liquidblush.png" alt="Petal Glow Liquid Blush" style="object-fit: cover; background-color: #050505;">
             <h3>Petal Glow Liquid Blush</h3>
-            <p class="product-description">Experience the ultimate flush of color with our signature PG Liquid Blush. Designed with a built-in soft cushion applicator, this feather-light, buildable formula melts effortlessly into your skin for a long-lasting, dewy, and naturally radiant rosy finish.</p>   
+            <p class="product-description">Experience the ultimate flush of color with our signature PG Liquid Blush with built-in soft cushion applicator.</p>   
             <div class="product-price">$24.00</div>
             <button class="buy-btn">Buy Now</button>
         </div>
-    </div>   
-<footer>
-    &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
-</footer>
-        
+
+    </div> <!-- Product Grid Close -->
+
+    <footer>
+        &copy; 2026 Petal Glow Cosmetics. All Rights Reserved.
+    </footer>
+
 </body>
 </html>
 
