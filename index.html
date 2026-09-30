@@ -182,9 +182,26 @@
             text-shadow: 0 0 8px rgba(214, 32, 39, 0.6);
         }
         @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-content {
+    display: flex;
+    width: max-content;
+}
+
+.marquee-text {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+</style>
     </style>
 
     <div class="marquee-container">
